@@ -8,6 +8,13 @@ pipeline {
               
             }
         }
+
+         stage('Install Docker using Ansible') {
+            steps {
+                sh 'ansible-playbook ansible-playbook.yml'
+            }
+        }
+        
         stage('Build docker image'){
             steps{
                 script{
